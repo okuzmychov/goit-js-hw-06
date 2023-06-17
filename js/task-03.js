@@ -13,16 +13,20 @@ const images = [
   },
 ];
 
-const list = document.querySelector(".gallery");
+// const galleryEl = document.querySelector(".gallery");
+// let galleryItemEl = "";
+// images.forEach((img) => {
+//   galleryItemEl += `<li><img class='js-gallery' src='${img.url}' alt='${img.alt}'></img></li>`;
+// });
 
-const createGalleryItem = (image) => {
-  const { url, alt } = image;
-  return "<li class='js-gallery'><img src='${url}' alt='${alt}'></li>";
-};
+// galleryEl.insertAdjacentHTML("beforeend", galleryItemEl);
 
-const createGallery = (images) => {
-  const galleryItems = images.map(createGalleryItem).join("");
-  galleryElement.insertAdjacentHTML("beforeend", galleryItems);
-};
 
-createGallery(images, gallery);
+const galleryEl = document.querySelector(".gallery");
+
+const items = images.map((img) => 
+  `<li class='js-gallery'>
+  <img src='${img.url}' alt='${img.alt}' width=50%>
+  </img></li>`).join('');
+
+galleryEl.insertAdjacentHTML("beforeend", items);
