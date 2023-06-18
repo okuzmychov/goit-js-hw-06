@@ -1,8 +1,10 @@
 const input = document.querySelector('#name-input');
 const title = document.querySelector('#name-output');
 
-input.addEventListener('change', handlerQuery)
+input.addEventListener('input', handlerQuery)
 function handlerQuery(evt) {
-    // console.log(evt.currenTarget.value);
     title.textContent = evt.currentTarget.value;
-} 
+    if (evt.currentTarget.value === 'false') {
+        return title.textContent = `Anonymous`;
+    }
+};
