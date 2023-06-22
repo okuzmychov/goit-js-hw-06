@@ -11,6 +11,11 @@ function handleSubmit(event) {
     return;
   }
 
-  console.log(`Email: ${email.value}, Password: ${password.value}`);
+  const formData = {
+    Email: email.value,
+    Password: password.value,
+  };
+
+  console.log(formData);
   event.currentTarget.reset();
 }
